@@ -1,0 +1,25 @@
+<div class="container">
+  <table class="table table-bordered mb-5" >
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Thumbnail</th>
+        <th scope="col">Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let photo of data_photo">
+        <tr>
+          <td>{{ photo.id }}</td>
+          <td ><img [src]="photo.thumbnailUrl" alt="" /></td>
+          <td><img [src]="photo.url" alt="" /></td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+  <div class="text-center ">
+    <button routerLink="/image/output/imageDisplay" class="btn btn-primary mb-5">
+      Next Page
+    </button>
+  </div>
+</div>

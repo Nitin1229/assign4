@@ -1,0 +1,24 @@
+<div class="container border border-primary mt-5 rounded">
+  <h1 class="mt-3 text-center text-primary">Image Upload</h1>
+  <div>
+    <div class="mb-3">
+      <label for="Title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="Title" [(ngModel)]="title" name="heading">
+    </div>
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Insert Image</label>
+      <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)">
+    </div>
+    <div class="mb-3">
+      <label for="thumbnail" class="form-label">Insert Image thumbnail</label>
+      <input class="form-control" type="file" id="thumbnail" (change)="onFileSelected($event)">
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary" (click)="onUpload()">Upload</button>
+    </div>
+    <div class="mb-3">
+      <button routerLink="/image/output" type="submit" class="btn btn-primary">Next</button>
+
+    </div>
+  </div>
+</div>
