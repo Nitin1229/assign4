@@ -9,7 +9,7 @@ import { ImagesService } from '../images.service';
 })
 export class ImageComponent implements OnInit {
     Link =[];
-    loading: boolean = false; // Flag variable
+    loading: boolean = false;
     file: File = null;
     title: string;
     
@@ -20,8 +20,7 @@ export class ImageComponent implements OnInit {
       "thumbnail":''
     }
 
-  // selectedFile: File;
-  constructor(private imageUpload: ImagesService, private fb: FormBuilder) { }
+  constructor(private imageUpload: ImagesService) { }
 
   ngOnInit(): void {
 
@@ -34,6 +33,7 @@ export class ImageComponent implements OnInit {
     }
     var mimeType = event.target.files[0].type;
     if (mimeType.match(/image\/*/) == null) {
+      alert('You can upload an image only.');
       return;
     }
     var reader = new FileReader();

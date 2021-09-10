@@ -14,14 +14,10 @@ export class OutputComponent implements OnInit {
   ngOnInit(): void {
 
     this.imageUpload.getPhotos().subscribe(data =>{ 
-      // console.log(data);
-      for(let i=0 ; i<4; i++){
+      for(let i=0 ; i<6; i++){
         this.data_photo.push(data[i]);
       }
-      console.log(this.data_photo);
-      // this.data_photo = data;
     });
-    // console.log(this.data_photo);
   }
 
 }
